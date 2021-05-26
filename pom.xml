@@ -104,15 +104,17 @@
 
                     <!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties file is present -->
                     <plugin>
-                        <groupId>pl.project13.maven</groupId>
-                        <artifactId>git-commit-id-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>revision</goal>
-                                </goals>
-                            </execution>
-                        </executions>
+                        <pluginManagement>
+                        <plugins>
+                            <plugin>
+                                <groupId>pl.project13.maven</groupId>
+                                <artifactId>git-commit-id-plugin</artifactId>
+                                <configuration>
+                                    <skip>true</skip>
+                                </configuration>
+                            </plugin>
+                        </plugins>
+                      </pluginManagement>
                         <configuration>
                             <verbose>true</verbose>
                             <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
